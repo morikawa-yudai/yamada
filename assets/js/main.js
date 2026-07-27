@@ -1,66 +1,48 @@
-/* ===== サイト共通: ヘッダー状態・メニュー・アンカー移動・スクロール表示 =====
-   WP移植メモ: 外部スムーススクロールライブラリは使わず、ブラウザ標準の軽いスクロールを使用 */
-(function(){
-  "use strict";
-  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+(() => {
+  const body = document.body;
+  const header = document.getElementById("header");
+  const menuButton = document.getElementById("menu-button");
+  const nav = document.getElementById("global-nav");
+  const pageTop = document.getElementById("page-top");
 
-  /* header scroll state + to-top */
-  var header=document.getElementById('header'), toTop=document.getElementById('toTop');
-  var ticking=false;
-  function updateScrollState(){
-    var y=scrollY;
-    if(header) header.classList.toggle('scrolled', y>30);
-    if(toTop) toTop.classList.toggle('show', y>600);
-    ticking=false;
-  }
-  function onScroll(){
-    if(!ticking){
-      ticking=true;
-      requestAnimationFrame(updateScrollState);
-    }
-  }
-  addEventListener('scroll',onScroll,{passive:true});
-  updateScrollState();
+  const updateChrome = () => {
+    const scrolled = window.scrollY > 24;
+    header?.classList.toggle("scrolled", scrolled);
+    pageTop?.classList.toggle("visible", window.scrollY > 600);
+  };
 
-  /* mobile menu */
-  var burger=document.getElementById('burger');
-  if(burger){
-    burger.addEventListener('click',function(){document.body.classList.toggle('menu-open');});
-  }
-  document.querySelectorAll('#nav a').forEach(function(a){
-    a.addEventListener('click',function(){document.body.classList.remove('menu-open');});
+  menuButton?.addEventListener("click", () => {
+    const open = !body.classList.contains("menu-open");
+    body.classList.toggle("menu-open", open);
+    menuButton.setAttribute("aria-expanded", String(open));
+    menuButton.setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く");
   });
-  if(toTop){
-    toTop.addEventListener('click',function(){
-      scrollTo({top:0,behavior:reduce?'auto':'smooth'});
-    });
-  }
 
-  /* anchor links: native scrolling only, so wheel/touch input stays responsive */
-  document.querySelectorAll('a[href^="#"]').forEach(function(a){
-    a.addEventListener('click',function(e){
-      var id=a.getAttribute('href');
-      if(!id || id.length<2) return;
-      var el=document.querySelector(id);
-      if(!el) return;
-      e.preventDefault();
-      var top=el.getBoundingClientRect().top+scrollY-72;
-      scrollTo({top:Math.max(0,top),behavior:reduce?'auto':'smooth'});
+  nav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      body.classList.remove("menu-open");
+      menuButton?.setAttribute("aria-expanded", "false");
+      menuButton?.setAttribute("aria-label", "メニューを開く");
     });
   });
 
-  /* reveal on scroll */
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(en){
-        if(en.isIntersecting){
-          en.target.classList.add('in');
-          io.unobserve(en.target);
-        }
+  pageTop?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reveals = document.querySelectorAll(".reveal");
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    reveals.forEach((node) => node.classList.add("is-visible"));
+  } else {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
       });
-    },{threshold:.14,rootMargin:'0px 0px -8% 0px'});
-    document.querySelectorAll('[data-reveal]').forEach(function(el){io.observe(el);});
-  }else{
-    document.querySelectorAll('[data-reveal]').forEach(function(el){el.classList.add('in');});
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    reveals.forEach((node) => observer.observe(node));
   }
+
+  window.addEventListener("scroll", updateChrome, { passive: true });
+  updateChrome();
 })();
