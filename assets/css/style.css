@@ -9,19 +9,30 @@
   --line: #dbe5eb;
   --paper: #f7fafb;
   --white: #fff;
-  --serif: "Noto Serif JP", serif;
-  --sans: "Noto Sans JP", sans-serif;
-  --latin: "Inter", sans-serif;
+  --serif: "Noto Serif JP", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
+  --sans: "Noto Serif JP", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
+  --latin: "Inter", "Noto Serif JP", serif;
   --shell: min(1180px, calc(100% - 64px));
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { color: var(--ink); background: var(--white); font-family: var(--sans); line-height: 1.8; -webkit-font-smoothing: antialiased; }
+body {
+  color: var(--ink);
+  background: var(--white);
+  font-family: var(--serif);
+  font-feature-settings: "palt" 1;
+  font-kerning: normal;
+  line-height: 1.9;
+  letter-spacing: .015em;
+  -webkit-font-smoothing: antialiased;
+}
 body.menu-open { overflow: hidden; }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 button { color: inherit; font: inherit; }
+h1, h2, h3 { text-wrap: balance; line-break: strict; }
+p, li, dt, dd, strong { line-break: strict; }
 .shell { width: var(--shell); margin-inline: auto; }
 .section { padding: clamp(88px, 10vw, 150px) 0; }
 
@@ -59,9 +70,9 @@ button { color: inherit; font: inherit; }
 .hero-content { position: relative; z-index: 2; width: var(--shell); margin-inline: auto; padding: 54px 0; }
 .hero-intro { margin-bottom: 22px; color: var(--navy-2); font-size: clamp(.92rem, 1.3vw, 1.12rem); font-weight: 600; letter-spacing: .15em; }
 .hero h1 { color: var(--navy); font-family: var(--serif); font-size: clamp(3rem, 6.4vw, 6.6rem); font-weight: 700; line-height: 1.25; letter-spacing: .02em; }
-.hero h1 span { font-size: .66em; }
-.hero h1 em { color: var(--navy); font-style: normal; }
-.hero-lead { margin-top: 30px; color: #30495e; font-size: clamp(.94rem, 1.2vw, 1.08rem); font-weight: 500; line-height: 2; }
+.hero h1 span { display: block; font-size: .66em; }
+.hero h1 em { display: block; color: var(--navy); font-style: normal; }
+.hero-lead { max-width: 620px; margin-top: 30px; color: #30495e; font-size: clamp(.94rem, 1.2vw, 1.08rem); font-weight: 500; line-height: 2; text-wrap: pretty; }
 .hero-keywords { display: flex; gap: 10px; margin-top: 36px; list-style:none; }
 .hero-keywords li { min-width: 54px; padding: 9px 15px; color: var(--navy); background: rgba(255,255,255,.82); border: 1px solid rgba(11,39,66,.18); font-family: var(--serif); font-size: .9rem; text-align: center; backdrop-filter: blur(8px); }
 .scroll-cue { position:absolute; z-index:3; right:32px; bottom:30px; display:flex; align-items:center; gap:12px; color:var(--navy); font-family:var(--latin); font-size:.64rem; font-weight:700; letter-spacing:.18em; writing-mode:vertical-rl; }
