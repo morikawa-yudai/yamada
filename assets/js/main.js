@@ -4,11 +4,13 @@
   const menuButton = document.getElementById("menu-button");
   const nav = document.getElementById("global-nav");
   const pageTop = document.getElementById("page-top");
+  const floatingLinks = document.querySelector(".floating-links");
 
   const updateChrome = () => {
     const scrolled = window.scrollY > 24;
     header?.classList.toggle("scrolled", scrolled);
     pageTop?.classList.toggle("visible", window.scrollY > 600);
+    floatingLinks?.classList.toggle("is-over-hero", window.scrollY < 180);
   };
 
   menuButton?.addEventListener("click", () => {
