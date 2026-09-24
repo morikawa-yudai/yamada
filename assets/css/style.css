@@ -874,3 +874,215 @@ p, li, dt, dd, strong { line-break: strict; }
   .sub-cta-inner { align-items:stretch; flex-direction:column; gap:30px; }
   .sub-cta a { min-width:0; }
 }
+
+
+/* CONTENT SUBPAGES */
+.subhero-company .subhero-media { object-position:center 42%; }
+.subhero-recruit .subhero-media { object-position:center 55%; }
+.subhero-safety .subhero-media { object-position:center 52%; }
+.subhero-compact {
+  min-height:500px;
+  background:
+    radial-gradient(circle at 78% 36%,rgba(46,163,215,.22),transparent 24%),
+    linear-gradient(125deg,#06182b,#0b3153 65%,#082139);
+}
+.subhero-compact::before {
+  content:"YAMADA";
+  position:absolute;
+  right:-2vw;
+  bottom:-7vw;
+  color:rgba(255,255,255,.035);
+  font-family:var(--latin);
+  font-size:clamp(7rem,18vw,18rem);
+  font-weight:700;
+  letter-spacing:.02em;
+  line-height:1;
+}
+.subhero-compact .subhero-shade { background:linear-gradient(90deg,rgba(2,14,29,.35),transparent); }
+
+.company-message-grid {
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:clamp(60px,9vw,135px);
+}
+.company-message-grid h2,
+.company-profile-title h2,
+.contact-guide h2 {
+  margin-top:18px;
+  color:var(--navy);
+  font-size:clamp(2rem,4vw,3.4rem);
+  line-height:1.55;
+}
+.company-message-text > p { color:var(--muted); line-height:2.15; }
+.company-message-text > p + p { margin-top:22px; }
+.representative-sign { margin-top:42px; display:flex; align-items:baseline; justify-content:flex-end; gap:20px; color:var(--navy); }
+.representative-sign span { font-size:.76rem; }
+.representative-sign strong { font-size:1.35rem; letter-spacing:.16em; }
+
+.company-profile-section,
+.requirements-section { background:var(--paper); }
+.company-profile-grid {
+  display:grid;
+  grid-template-columns:.65fr 1.35fr;
+  gap:clamp(55px,9vw,120px);
+  align-items:start;
+}
+.company-profile-title > p:last-child { margin-top:22px; color:var(--muted); }
+.profile-table { border-top:1px solid var(--navy); }
+.profile-table > div {
+  display:grid;
+  grid-template-columns:155px 1fr;
+  border-bottom:1px solid var(--line);
+}
+.profile-table dt { padding:22px 18px; color:var(--navy); font-weight:700; }
+.profile-table dd { padding:22px 18px; color:var(--muted); }
+.profile-table dd small { font-size:.72rem; }
+
+.license-section { background:#fff; }
+.license-card {
+  margin-top:50px;
+  padding:42px;
+  display:grid;
+  grid-template-columns:.75fr 1.25fr;
+  gap:50px;
+  border:1px solid var(--line);
+}
+.license-card h3 { color:var(--navy); font-size:1.35rem; }
+.license-card ul { list-style:none; }
+.license-card li { padding:12px 0; display:flex; justify-content:space-between; gap:24px; border-bottom:1px solid var(--line); }
+.license-card li:first-child { padding-top:0; }
+.license-card span { color:var(--muted); }
+.license-card strong { color:var(--navy); font-family:var(--latin); font-size:.84rem; }
+
+.access-section { background:#edf7fa; }
+.access-grid { display:grid; grid-template-columns:.72fr 1.28fr; gap:70px; align-items:center; }
+.access-grid h2 { margin-top:16px; color:var(--navy); font-size:clamp(2rem,3.5vw,3rem); }
+.access-grid p { margin-top:20px; color:var(--muted); }
+.access-map-placeholder {
+  min-height:310px;
+  padding:45px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  color:#fff;
+  background:
+    linear-gradient(135deg,rgba(7,35,61,.94),rgba(17,76,113,.85)),
+    repeating-linear-gradient(45deg,transparent 0 38px,rgba(255,255,255,.08) 39px 40px);
+}
+.access-map-placeholder span { color:#7dd1f2; font-family:var(--latin); font-size:.65rem; font-weight:700; letter-spacing:.2em; }
+.access-map-placeholder strong { margin-top:14px; font-size:1.35rem; }
+.access-map-placeholder small { margin-top:9px; color:rgba(255,255,255,.7); font-family:var(--latin); }
+
+.person-section { background:var(--navy); }
+.person-section .section-code { color:#7dd1f2; }
+.person-section .section-heading h2 { color:#fff; }
+.recruit-person-grid .reason-card { min-height:350px; }
+.job-section { background:var(--paper); }
+.job-card-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:22px; margin-top:55px; }
+.job-card { min-height:250px; padding:38px; border:1px solid var(--line); background:#fff; }
+.job-card small { color:var(--blue); font-family:var(--latin); font-size:.68rem; font-weight:700; letter-spacing:.13em; }
+.job-card h3 { margin-top:22px; color:var(--navy); font-size:1.35rem; }
+.job-card p { margin-top:15px; color:var(--muted); }
+.benefit-section { background:#fff; }
+.benefit-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:55px; }
+.benefit-card { min-height:185px; padding:32px; border-top:3px solid var(--blue); background:var(--paper); }
+.benefit-card h3 { color:var(--navy); font-size:1.08rem; }
+.benefit-card p { margin-top:12px; color:var(--muted); font-size:.84rem; }
+
+.safety-detail-section { background:var(--navy); }
+.safety-feature-grid { display:grid; gap:1px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.16); }
+.safety-feature {
+  min-height:265px;
+  padding:48px;
+  display:grid;
+  grid-template-columns:150px 1fr;
+  gap:30px;
+  align-items:center;
+  background:var(--navy);
+}
+.safety-feature > span { color:rgba(255,255,255,.09); font-family:var(--latin); font-size:6rem; font-weight:700; line-height:1; }
+.safety-feature .section-code { color:#7dd1f2; }
+.safety-feature h2 { margin-top:12px; color:#fff; font-size:clamp(1.5rem,3vw,2.35rem); }
+.safety-feature p:not(.section-code) { margin-top:15px; color:rgba(255,255,255,.68); }
+.safety-promise-section { background:var(--paper); }
+
+.contact-page-grid { display:grid; grid-template-columns:.72fr 1.28fr; gap:clamp(55px,9vw,120px); }
+.contact-guide > p:not(.section-code) { margin-top:20px; color:var(--muted); }
+.contact-channel { margin-top:36px; padding-top:25px; border-top:1px solid var(--line); display:flex; flex-direction:column; align-items:flex-start; }
+.contact-channel small { color:var(--blue); font-family:var(--latin); font-size:.62rem; font-weight:700; letter-spacing:.16em; }
+.contact-channel a,
+.contact-channel strong { color:var(--navy); font-family:var(--latin); font-size:clamp(1.8rem,3.2vw,2.6rem); line-height:1.35; }
+.contact-channel span { color:var(--muted); font-size:.75rem; }
+.contact-form { padding:44px; background:var(--paper); border:1px solid var(--line); }
+.contact-form label { display:block; }
+.contact-form label + label { margin-top:24px; }
+.contact-form label > span { display:flex; align-items:center; gap:10px; margin-bottom:8px; color:var(--navy); font-weight:700; }
+.contact-form label b,
+.contact-form label i { padding:2px 8px; color:#fff; background:var(--blue); font-size:.58rem; font-style:normal; font-weight:700; }
+.contact-form label i { color:var(--muted); background:#e5edf1; }
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width:100%;
+  padding:14px 16px;
+  border:1px solid #cbd8df;
+  border-radius:0;
+  color:var(--ink);
+  background:#fff;
+  font:inherit;
+  font-size:.92rem;
+}
+.contact-form textarea { resize:vertical; }
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus { outline:2px solid rgba(21,152,210,.25); border-color:var(--blue); }
+.form-note { margin-top:20px; color:var(--muted); font-size:.72rem; }
+.contact-form button {
+  width:100%;
+  margin-top:22px;
+  padding:18px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border:0;
+  color:#fff;
+  background:var(--navy);
+  font-weight:700;
+  cursor:pointer;
+  transition:background .2s;
+}
+.contact-form button:hover { background:var(--blue); }
+
+.news-archive { min-height:540px; background:var(--paper); }
+.news-archive .news-list { border-top:1px solid var(--navy); }
+.news-archive article.news-item { cursor:default; }
+
+@media (max-width:1080px) {
+  .company-message-grid,
+  .company-profile-grid,
+  .access-grid,
+  .contact-page-grid { grid-template-columns:1fr; gap:42px; }
+  .license-card { grid-template-columns:1fr; }
+  .benefit-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:760px) {
+  .subhero-company .subhero-media { object-position:62% center; }
+  .subhero-recruit .subhero-media { object-position:67% center; }
+  .subhero-safety .subhero-media { object-position:70% center; }
+  .subhero-compact { min-height:470px; }
+  .company-message-grid h2,
+  .company-profile-title h2,
+  .contact-guide h2 { font-size:clamp(2rem,9vw,2.7rem); }
+  .profile-table > div { grid-template-columns:1fr; }
+  .profile-table dt { padding:18px 0 6px; }
+  .profile-table dd { padding:0 0 18px; }
+  .license-card { padding:28px; }
+  .license-card li { flex-direction:column; gap:2px; }
+  .access-map-placeholder { min-height:260px; padding:30px; }
+  .job-card-grid,
+  .benefit-grid { grid-template-columns:1fr; }
+  .job-card { min-height:0; padding:30px 28px; }
+  .safety-feature { grid-template-columns:62px 1fr; gap:15px; padding:34px 24px; }
+  .safety-feature > span { font-size:3rem; }
+  .contact-form { padding:28px 22px; }
+}
