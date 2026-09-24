@@ -1086,3 +1086,21 @@ p, li, dt, dd, strong { line-break: strict; }
   .safety-feature > span { font-size:3rem; }
   .contact-form { padding:28px 22px; }
 }
+
+.service-reference {
+  margin-top:38px;
+  padding:38px 42px;
+  display:grid;
+  grid-template-columns:.7fr 1.3fr;
+  gap:48px;
+  background:#fff;
+  border:1px solid var(--line);
+}
+.service-reference h3 { margin-top:12px; color:var(--navy); font-size:1.35rem; }
+.service-reference ul { display:grid; grid-template-columns:1fr 1fr; gap:0 30px; list-style:none; }
+.service-reference li { padding:10px 0; border-bottom:1px solid var(--line); color:var(--muted); font-size:.85rem; }
+.service-reference li::before { content:"—"; margin-right:9px; color:var(--blue); }
+@media (max-width:760px) {
+  .service-reference { grid-template-columns:1fr; gap:24px; padding:28px 24px; }
+  .service-reference ul { grid-template-columns:1fr; }
+}
