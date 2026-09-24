@@ -69,17 +69,6 @@
 
 
 
-  const heroVideo = hero?.querySelector(".hero-video");
-  const desktopVideo = window.matchMedia("(min-width: 761px)").matches;
-  if (hero && heroVideo && desktopVideo && !reducedMotion) {
-    const showHeroVideo = () => hero.classList.add("hero-video-ready");
-    if (heroVideo.readyState >= 2) showHeroVideo();
-    else heroVideo.addEventListener("loadeddata", showHeroVideo, { once:true });
-    heroVideo.play().catch(() => {});
-  } else {
-    heroVideo?.pause();
-  }
-
   const heroPreviewImage = hero?.querySelector(".hero-preview-image");
   const heroKeywords = hero?.querySelector(".hero-keywords");
   const heroPreviewLinks = heroKeywords?.querySelectorAll("[data-hero-preview]") || [];
