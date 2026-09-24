@@ -45,6 +45,28 @@
     reveals.forEach((node) => observer.observe(node));
   }
 
+
+  const hero = document.querySelector(".hero");
+  const finePointer = window.matchMedia("(min-width: 761px) and (pointer: fine)").matches;
+  if (hero && finePointer && !reducedMotion) {
+    let heroFrame = 0;
+    const updateHeroDepth = (event) => {
+      if (heroFrame) cancelAnimationFrame(heroFrame);
+      heroFrame = requestAnimationFrame(() => {
+        const rect = hero.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width - 0.5) * 10;
+        const y = ((event.clientY - rect.top) / rect.height - 0.5) * 6;
+        hero.style.setProperty("--hero-x", `${x.toFixed(2)}px`);
+        hero.style.setProperty("--hero-y", `${y.toFixed(2)}px`);
+      });
+    };
+    hero.addEventListener("pointermove", updateHeroDepth, { passive: true });
+    hero.addEventListener("pointerleave", () => {
+      hero.style.setProperty("--hero-x", "0px");
+      hero.style.setProperty("--hero-y", "0px");
+    });
+  }
+
   window.addEventListener("scroll", updateChrome, { passive: true });
   updateChrome();
 })();

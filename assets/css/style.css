@@ -226,6 +226,69 @@ p, li, dt, dd, strong { line-break: strict; }
 .scroll-cue i::after { content:""; display:block; width:1px; height:24px; background:#fff; animation:scroll-line 1.8s ease-in-out infinite; }
 @keyframes scroll-line { from { transform:translateY(-26px); } to { transform:translateY(62px); } }
 
+
+/* Hero motion: subtle depth, light and sequential entrance */
+.hero { --hero-x:0px; --hero-y:0px; }
+.hero-media img {
+  will-change:transform;
+  animation:hero-breathe 16s cubic-bezier(.22,.61,.36,1) both;
+}
+.hero-media::after {
+  will-change:opacity;
+  animation:hero-glow 5.5s ease-in-out infinite;
+}
+.hero-intro,
+.hero h1,
+.hero-lead,
+.hero-keywords {
+  opacity:0;
+  animation:hero-rise .9s cubic-bezier(.2,.72,.24,1) forwards;
+}
+.hero-intro { animation-delay:.12s; }
+.hero h1 { animation-delay:.28s; }
+.hero-lead { animation-delay:.46s; }
+.hero-keywords {
+  position:relative;
+  overflow:hidden;
+  animation-delay:.64s;
+}
+.hero-keywords::after {
+  content:"";
+  position:absolute;
+  z-index:2;
+  left:-34%;
+  top:0;
+  width:34%;
+  height:1px;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,#81dbfb,rgba(255,255,255,.95),transparent);
+  filter:drop-shadow(0 0 7px rgba(111,210,248,.75));
+  animation:hero-route 4.8s 1.5s ease-in-out infinite;
+}
+.hero-keywords li a {
+  transition:color .25s,background .25s,transform .25s;
+}
+.hero-keywords li a:hover { transform:translateY(-2px); }
+
+@keyframes hero-breathe {
+  0% { transform:translate3d(var(--hero-x),var(--hero-y),0) scale(1.012); }
+  100% { transform:translate3d(var(--hero-x),var(--hero-y),0) scale(1.058); }
+}
+@keyframes hero-glow {
+  0%,100% { opacity:.65; }
+  50% { opacity:1; }
+}
+@keyframes hero-rise {
+  from { opacity:0; transform:translateY(24px); filter:blur(4px); }
+  to { opacity:1; transform:translateY(0); filter:blur(0); }
+}
+@keyframes hero-route {
+  0%,14% { left:-34%; opacity:0; }
+  25% { opacity:1; }
+  66% { opacity:1; }
+  78%,100% { left:100%; opacity:0; }
+}
+
 .news-flash { position: relative; z-index: 4; background: #fff; border-bottom: 1px solid var(--line); }
 .news-flash-inner { min-height: 126px; display: grid; grid-template-columns: 185px 1fr; align-items: stretch; }
 .news-label { padding: 29px 30px 25px 0; border-right: 1px solid var(--line); display:flex; flex-direction:column; justify-content:center; gap:6px; }
