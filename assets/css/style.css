@@ -383,15 +383,6 @@ p, li, dt, dd, strong { line-break: strict; }
 .service-row > p { color:var(--muted); font-size:.9rem; }
 .service-arrow { width:46px; height:46px; display:grid; place-items:center; border:1px solid var(--line); border-radius:50%; }
 
-.numbers { padding:70px 0; color:#fff; background:var(--navy); }
-.number-grid { display:grid; grid-template-columns:repeat(4,1fr); }
-.number-item { position:relative; padding:0 34px; text-align:center; }
-.number-item + .number-item::before { content:""; position:absolute; left:0; top:10%; width:1px; height:80%; background:rgba(255,255,255,.16); }
-.number-item > span { color:var(--sky); font-size:.72rem; font-weight:700; letter-spacing:.1em; }
-.number-item strong { display:block; margin-top:7px; font-family:var(--serif); font-size:clamp(2.2rem,4vw,3.6rem); line-height:1.2; }
-.number-item strong small { margin-left:4px; font-family:var(--sans); font-size:.28em; }
-.number-item p { color:rgba(255,255,255,.55); font-size:.72rem; }
-
 .company { background:linear-gradient(90deg, #edf7fa 0 36%, #fff 36% 100%); }
 .company-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(60px,9vw,130px); align-items:start; }
 .company-copy h2 { font-size:clamp(2rem,4vw,3.4rem); }
