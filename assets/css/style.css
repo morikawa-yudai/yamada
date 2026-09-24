@@ -168,6 +168,15 @@ p, li, dt, dd, strong { line-break: strict; }
   padding: 13px 12px;
   color:#fff;
 }
+.hero-keywords li a {
+  width:100%;
+  display:flex;
+  align-items:baseline;
+  justify-content:center;
+  gap:10px;
+  transition:color .2s, background .2s;
+}
+.hero-keywords li a:hover { color:#8bd9f7; }
 .hero-keywords li + li::before {
   content: "";
   position: absolute;
