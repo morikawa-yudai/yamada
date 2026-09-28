@@ -297,14 +297,15 @@ p, li, dt, dd, strong { line-break: strict; }
 .hero-cloud-field {
   position:absolute;
   z-index:0;
-  top:-4%;
-  left:-8%;
-  width:116%;
-  height:61%;
+  top:-2%;
+  left:-6%;
+  width:82%;
+  height:44%;
   overflow:hidden;
   pointer-events:none;
-  opacity:.78;
+  opacity:.68;
   mix-blend-mode:screen;
+  clip-path:polygon(0 0,100% 0,96% 58%,84% 100%,0 86%);
   will-change:transform;
   animation:hero-cloud-drift 34s ease-in-out infinite alternate;
 }
@@ -321,7 +322,15 @@ p, li, dt, dd, strong { line-break: strict; }
   to { transform:translate3d(1.8%,.8%,0) scale(1.025); }
 }
 @media (max-width:760px) {
-  .hero-cloud-field { top:-1%; left:-22%; width:144%; height:48%; opacity:.55; }
+  .hero-cloud-field {
+    top:0;
+    right:58%;
+    left:auto;
+    width:110%;
+    height:43%;
+    opacity:.5;
+    clip-path:polygon(0 0,100% 0,96% 54%,82% 100%,0 88%);
+  }
 }
 @media (prefers-reduced-motion:reduce) {
   .hero-cloud-field { animation:none !important; }
