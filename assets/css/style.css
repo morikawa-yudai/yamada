@@ -540,8 +540,8 @@ p, li, dt, dd, strong { line-break: strict; }
 }
 .floating-link {
   position:relative;
-  width:244px;
-  min-height:66px;
+  width:262px;
+  min-height:68px;
   display:grid;
   grid-template-columns:44px 1fr 24px;
   gap:12px;
@@ -608,12 +608,12 @@ p, li, dt, dd, strong { line-break: strict; }
 }
 .floating-link-copy small {
   font-family:var(--latin);
-  font-size:.43rem;
+  font-size:.47rem;
   font-weight:700;
   letter-spacing:.14em;
 }
 .floating-link-copy strong {
-  font-size:.8rem;
+  font-size:.88rem;
   font-weight:700;
   letter-spacing:.025em;
   white-space:nowrap;
@@ -638,6 +638,7 @@ p, li, dt, dd, strong { line-break: strict; }
 }
 .floating-instagram .floating-link-copy small { color:#9eddf5; }
 .floating-office {
+  grid-template-columns:1fr 24px;
   color:var(--navy);
   background:rgba(255,255,255,.96);
   border-color:rgba(7,39,67,.15);
@@ -648,12 +649,13 @@ p, li, dt, dd, strong { line-break: strict; }
 .floating-office .floating-link-copy small {
   color:#677787;
   font-family:var(--serif);
-  font-size:.49rem;
+  font-size:.52rem;
   letter-spacing:.04em;
+  white-space:nowrap;
 }
 .floating-office .floating-link-copy strong {
   color:var(--navy);
-  font-size:.82rem;
+  font-size:.94rem;
 }
 .floating-office .floating-link-arrow { color:var(--navy); }
 
@@ -766,7 +768,7 @@ p, li, dt, dd, strong { line-break: strict; }
   .floating-link-copy small { font-size:.36rem; letter-spacing:.1em; }
   .floating-link-copy strong { font-size:.68rem; line-height:1.35; letter-spacing:0; white-space:normal; }
   .floating-link-arrow { display:none; }
-  .floating-office { grid-template-columns:40px 1fr; min-height:62px; }
+  .floating-office { grid-template-columns:1fr; min-height:62px; }
   .office-marutto-copy { gap:3px; padding-left:0; }
   .office-marutto-copy small { font-size:.4rem; letter-spacing:.08em; }
   .office-marutto-copy strong { font-size:.66rem; letter-spacing:.01em; }
@@ -783,7 +785,7 @@ p, li, dt, dd, strong { line-break: strict; }
   .floating-link-copy small { display:none; }
   .floating-link-copy strong { font-size:.62rem; }
   .floating-link-arrow { width:18px; height:18px; }
-  .floating-office { grid-template-columns:36px 1fr; }
+  .floating-office { grid-template-columns:1fr; }
   .office-marutto-copy strong { font-size:.61rem; }
 }
 
