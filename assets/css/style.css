@@ -495,6 +495,7 @@ p, li, dt, dd, strong { line-break: strict; }
 .recruit-inner { position:relative; z-index:2; display:grid; grid-template-columns:1fr .72fr; gap:70px; align-items:end; }
 .recruit .section-code { color:var(--sky); }
 .recruit h2 { color:#fff; font-size:clamp(2.2rem,5vw,4rem); }
+.recruit-heading > span { display:block; white-space:nowrap; }
 .recruit-copy > p:not(.section-code) { max-width:590px; margin-top:25px; color:rgba(255,255,255,.72); }
 .recruit-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:28px; }
 .recruit-tags span { padding:8px 14px; border:1px solid rgba(255,255,255,.22); font-size:.76rem; }
@@ -894,6 +895,13 @@ p, li, dt, dd, strong { line-break: strict; }
   font-size:clamp(2rem,4vw,3.55rem);
   line-height:1.55;
 }
+.logistics-overview-title .overview-line {
+  display:block;
+  white-space:nowrap;
+}
+.logistics-overview-title .overview-line > span + span::before {
+  content:"";
+}
 .service-overview-text p { color:var(--muted); font-size:1rem; line-height:2.15; }
 .service-overview-text p + p { margin-top:20px; }
 .sub-stat-grid {
@@ -1024,6 +1032,10 @@ p, li, dt, dd, strong { line-break: strict; }
   .reason-card h3 { margin-top:55px; }
 }
 @media (max-width: 760px) {
+  .recruit-heading { font-size:clamp(1.78rem,8.4vw,2.3rem) !important; }
+  .logistics-overview-title .overview-line > span {
+    display:block;
+  }
   .subhero { min-height:620px; padding-top:72px; }
   .subhero-media, .subhero-shade { inset:72px 0 0; height:calc(100% - 72px); }
   .subhero-media { object-position:67% center; }
