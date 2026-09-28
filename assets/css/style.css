@@ -292,7 +292,7 @@ p, li, dt, dd, strong { line-break: strict; }
 
 
 
-/* Fixed-camera hero: only clouds and the distant worker move */
+/* Fixed-camera hero: only the cloud layer moves */
 .hero-base-image { z-index:0; }
 .hero-cloud-field {
   position:absolute;
@@ -316,42 +316,15 @@ p, li, dt, dd, strong { line-break: strict; }
   filter:saturate(.82) contrast(.96);
   transform:none;
 }
-.hero-walker {
-  position:absolute;
-  z-index:0;
-  left:49.4%;
-  bottom:18%;
-  width:98px;
-  height:130px;
-  pointer-events:none;
-  opacity:.9;
-  background:url("../images/hero-workers-sprite.webp") 0 0 / 400% 100% no-repeat;
-  filter:drop-shadow(0 8px 8px rgba(0,0,0,.18));
-  will-change:left,bottom,transform,background-position;
-  animation:
-    hero-worker-gait .92s steps(3,end) infinite,
-    hero-worker-path 16s linear infinite;
-}
 @keyframes hero-cloud-drift {
   from { transform:translate3d(-1.8%,0,0) scale(1.01); }
   to { transform:translate3d(1.8%,.8%,0) scale(1.025); }
 }
-@keyframes hero-worker-gait {
-  from { background-position:0 0; }
-  to { background-position:100% 0; }
-}
-@keyframes hero-worker-path {
-  0% { left:49.4%; bottom:18%; transform:translateX(-50%) scale(.92); }
-  48% { left:53.2%; bottom:20.2%; transform:translateX(-50%) scale(.8); }
-  100% { left:57.2%; bottom:22.4%; transform:translateX(-50%) scale(.68); }
-}
 @media (max-width:760px) {
   .hero-cloud-field { top:-1%; left:-22%; width:144%; height:48%; opacity:.55; }
-  .hero-walker { display:none; }
 }
 @media (prefers-reduced-motion:reduce) {
-  .hero-cloud-field,
-  .hero-walker { animation:none !important; }
+  .hero-cloud-field { animation:none !important; }
 }
 
 /* Interactive service preview */
