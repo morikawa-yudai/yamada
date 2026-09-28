@@ -534,45 +534,49 @@ p, li, dt, dd, strong { line-break: strict; }
   top:50%;
   right:18px;
   display:grid;
-  gap:10px;
+  gap:8px;
   transform:translateY(-50%);
   transition:top .35s ease,right .35s ease,transform .35s ease;
 }
 .floating-link {
   position:relative;
-  width:52px;
-  height:52px;
-  min-height:52px;
+  width:244px;
+  min-height:66px;
   display:grid;
-  place-items:center;
-  padding:6px;
-  overflow:visible;
-  color:#fff;
-  background:rgba(5,22,40,.84);
-  border:1px solid rgba(255,255,255,.2);
-  border-radius:50%;
-  box-shadow:0 10px 28px rgba(2,14,29,.22);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  transition:transform .22s ease,background .22s ease,box-shadow .22s ease;
+  grid-template-columns:44px 1fr 24px;
+  gap:12px;
+  align-items:center;
+  padding:9px 12px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:12px;
+  box-shadow:0 12px 32px rgba(2,14,29,.2);
+  transition:transform .22s ease,box-shadow .22s ease;
+}
+.floating-link::before {
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  left:0;
+  height:2px;
 }
 .floating-link:hover {
-  transform:translateX(-4px) scale(1.04);
-  background:rgba(7,34,59,.96);
-  box-shadow:0 14px 34px rgba(2,14,29,.3);
+  transform:translateX(-6px);
+  box-shadow:0 17px 38px rgba(2,14,29,.27);
 }
 .instagram-mark,
 .office-mark {
-  width:38px;
-  height:38px;
+  width:40px;
+  height:40px;
   display:grid;
   place-items:center;
-  border-radius:50%;
+  border-radius:11px;
 }
 .instagram-mark {
   background:radial-gradient(circle at 31% 107%,#ffd600 0 16%,#ff7a00 31%,#ff0169 53%,#d300c5 70%,#7638fa 88%);
 }
-.instagram-mark svg { width:24px; height:24px; overflow:visible; }
+.instagram-mark svg { width:25px; height:25px; overflow:visible; }
 .instagram-mark rect,
 .instagram-mark circle:not(.instagram-dot) {
   fill:none;
@@ -581,56 +585,77 @@ p, li, dt, dd, strong { line-break: strict; }
 }
 .instagram-mark .instagram-dot { fill:#fff; stroke:none; }
 .office-mark {
-  color:var(--navy);
-  background:#fff;
+  color:#fff;
+  background:linear-gradient(145deg,#0c3458,#1489bf);
   font-family:var(--serif);
   font-size:1rem;
   font-weight:900;
 }
 .floating-link-copy {
-  position:absolute;
-  top:50%;
-  right:calc(100% + 10px);
-  min-width:148px;
+  position:static;
+  min-width:0;
   display:flex;
   flex-direction:column;
-  gap:2px;
-  padding:9px 12px;
-  color:#fff;
+  gap:4px;
+  padding:0;
   line-height:1.2;
-  text-align:left;
-  background:rgba(5,22,40,.94);
-  border:1px solid rgba(255,255,255,.16);
-  border-radius:9px;
-  box-shadow:0 10px 28px rgba(2,14,29,.22);
-  opacity:0;
-  pointer-events:none;
-  transform:translate(7px,-50%);
-  transition:opacity .2s ease,transform .2s ease;
-}
-.floating-link:hover .floating-link-copy,
-.floating-link:focus-visible .floating-link-copy {
+  background:transparent;
+  border:0;
+  box-shadow:none;
   opacity:1;
-  transform:translate(0,-50%);
+  pointer-events:auto;
+  transform:none;
 }
 .floating-link-copy small {
-  color:#83d8f7;
   font-family:var(--latin);
-  font-size:.4rem;
+  font-size:.43rem;
   font-weight:700;
   letter-spacing:.14em;
 }
 .floating-link-copy strong {
-  color:#fff;
-  font-size:.74rem;
+  font-size:.8rem;
   font-weight:700;
-  letter-spacing:.02em;
+  letter-spacing:.025em;
   white-space:nowrap;
 }
-.floating-link-arrow { display:none; }
-.floating-office { background:rgba(5,22,40,.84); }
-.office-marutto-copy { min-width:166px; }
-.office-marutto-copy strong { font-size:.72rem; }
+.floating-link-arrow {
+  width:23px;
+  height:23px;
+  display:grid;
+  place-items:center;
+  border:1px solid currentColor;
+  border-radius:50%;
+  font-family:var(--latin);
+  font-size:.57rem;
+  opacity:.68;
+}
+.floating-instagram {
+  color:#fff;
+  background:linear-gradient(125deg,rgba(9,25,44,.97),rgba(25,24,50,.97));
+}
+.floating-instagram::before {
+  background:linear-gradient(90deg,#ff7a00,#ff0169,#7638fa);
+}
+.floating-instagram .floating-link-copy small { color:#9eddf5; }
+.floating-office {
+  color:var(--navy);
+  background:rgba(255,255,255,.96);
+  border-color:rgba(7,39,67,.15);
+}
+.floating-office::before {
+  background:linear-gradient(90deg,var(--navy),var(--blue));
+}
+.floating-office .floating-link-copy small {
+  color:#677787;
+  font-family:var(--serif);
+  font-size:.49rem;
+  letter-spacing:.04em;
+}
+.floating-office .floating-link-copy strong {
+  color:var(--navy);
+  font-size:.82rem;
+}
+.floating-office .floating-link-arrow { color:var(--navy); }
 
 @media (min-width:761px) {
   .floating-links.is-over-hero {
