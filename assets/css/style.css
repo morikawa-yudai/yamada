@@ -307,7 +307,7 @@ p, li, dt, dd, strong { line-break: strict; }
   mix-blend-mode:screen;
   clip-path:polygon(0 0,100% 0,96% 58%,84% 100%,0 86%);
   will-change:transform;
-  animation:hero-cloud-drift 34s ease-in-out infinite alternate;
+  animation:hero-cloud-drift 22s ease-in-out infinite alternate;
 }
 .hero-cloud-field img {
   width:100%;
