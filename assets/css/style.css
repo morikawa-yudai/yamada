@@ -1282,3 +1282,64 @@ p, li, dt, dd, strong { line-break: strict; }
   .service-reference { grid-template-columns:1fr; gap:24px; padding:28px 24px; }
   .service-reference ul { grid-template-columns:1fr; }
 }
+
+
+/* Preview branch: group-solution city hero */
+.hero-city-preview .hero-base-image {
+  object-position:center;
+  filter:saturate(.88) contrast(1.04) brightness(.82);
+  transform:scale(1.015);
+  animation:hero-city-breathe 18s ease-in-out infinite alternate;
+}
+.hero-city-preview .hero-media::before {
+  background:
+    linear-gradient(90deg,rgba(2,14,29,.92) 0%,rgba(3,20,38,.74) 29%,rgba(4,24,43,.3) 55%,rgba(2,14,29,.06) 78%),
+    linear-gradient(0deg,rgba(2,14,29,.62) 0%,rgba(2,14,29,.08) 48%,rgba(2,14,29,.12) 100%);
+}
+.hero-city-preview .hero-media::after {
+  background:
+    radial-gradient(circle at 72% 48%,rgba(255,195,111,.16),transparent 30%),
+    linear-gradient(105deg,transparent 22%,rgba(111,210,248,.08) 48%,transparent 70%);
+}
+.hero-city-preview .hero-wash::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(110deg,transparent 28%,rgba(132,218,250,.1) 48%,transparent 67%);
+  transform:translateX(-100%);
+  animation:hero-city-sweep 9s 1.2s ease-in-out infinite;
+}
+.hero-city-preview h1 {
+  max-width:1040px;
+  font-size:clamp(2.8rem,4.55vw,5rem);
+}
+.hero-city-preview h1 span { font-size:.76em; }
+.hero-city-preview .hero-lead { max-width:690px; }
+.hero-city-preview .hero-keywords {
+  background:rgba(2,16,31,.38);
+  border-color:rgba(255,255,255,.46);
+  box-shadow:0 14px 38px rgba(0,0,0,.12);
+}
+@keyframes hero-city-breathe {
+  from { transform:scale(1.015); }
+  to { transform:scale(1.045); }
+}
+@keyframes hero-city-sweep {
+  0%,18% { transform:translateX(-110%); opacity:0; }
+  35%,60% { opacity:1; }
+  80%,100% { transform:translateX(110%); opacity:0; }
+}
+@media (max-width:760px) {
+  .hero-city-preview .hero-base-image {
+    object-position:63% center;
+    animation-duration:14s;
+  }
+  .hero-city-preview .hero-media::before {
+    background:
+      linear-gradient(0deg,rgba(2,14,29,.91) 0%,rgba(3,20,38,.55) 61%,rgba(2,14,29,.14) 100%),
+      linear-gradient(90deg,rgba(2,14,29,.46),transparent);
+  }
+  .hero-city-preview h1 { font-size:clamp(2.2rem,9.5vw,3.25rem); }
+  .hero-city-preview h1 span { font-size:.72em; }
+  .hero-city-preview .hero-lead { max-width:34em; }
+}
