@@ -1353,8 +1353,36 @@ p, li, dt, dd, strong { line-break: strict; }
   letter-spacing:.08em;
 }
 .hero-yamada {
-  font-family:var(--latin);
-  font-size:.88em;
+  font-family:var(--serif);
+  font-size:1em;
+  font-weight:600;
+  letter-spacing:.018em;
+}
+
+
+/* Preview company profile locations */
+.profile-locations {
+  display:grid;
+  gap:13px;
+}
+.profile-locations span {
+  display:grid;
+  grid-template-columns:112px 1fr;
+  gap:16px;
+  align-items:start;
+}
+.profile-locations b {
+  color:var(--navy);
+  font-size:.84rem;
   font-weight:700;
-  letter-spacing:.045em;
+}
+.profile-locations i {
+  color:var(--muted);
+  font-style:normal;
+}
+@media (max-width:760px) {
+  .profile-locations span {
+    grid-template-columns:1fr;
+    gap:2px;
+  }
 }
