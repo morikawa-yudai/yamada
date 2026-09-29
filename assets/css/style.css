@@ -1343,3 +1343,18 @@ p, li, dt, dd, strong { line-break: strict; }
   .hero-city-preview h1 span { font-size:.72em; }
   .hero-city-preview .hero-lead { max-width:34em; }
 }
+
+
+/* Preview brand wording */
+.brand-group-en {
+  font-family:var(--latin);
+  font-size:.88em;
+  font-weight:700;
+  letter-spacing:.08em;
+}
+.hero-yamada {
+  font-family:var(--latin);
+  font-size:.88em;
+  font-weight:700;
+  letter-spacing:.045em;
+}
