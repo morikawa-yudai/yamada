@@ -1346,11 +1346,15 @@ p, li, dt, dd, strong { line-break: strict; }
 
 
 /* Preview brand wording */
-.brand-group-en {
+.brand-copy b {
   font-family:var(--latin);
-  font-size:.88em;
   font-weight:700;
-  letter-spacing:.08em;
+  letter-spacing:.1em;
+}
+.brand-copy small {
+  font-family:var(--serif);
+  font-weight:500;
+  letter-spacing:.12em;
 }
 .hero-yamada {
   font-family:var(--serif);
