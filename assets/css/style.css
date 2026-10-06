@@ -1606,3 +1606,25 @@ p, li, dt, dd, strong { line-break: strict; }
   .solution-brand-banner + .service-detail { padding-top:72px; }
   .solution-banner-bmark { right:-10%; font-size:11rem; }
 }
+
+
+/* Preview service list refinement */
+.service-index { display:none; }
+.service-row {
+  grid-template-columns:280px 1fr 54px;
+  gap:32px;
+}
+@media (max-width:1100px) {
+  .service-row { grid-template-columns:250px 1fr 48px; }
+}
+@media (max-width:760px) {
+  .service-row {
+    grid-template-columns:1fr;
+    gap:12px;
+    padding:28px 0;
+  }
+  .service-row > p {
+    grid-column:1;
+    padding-right:50px;
+  }
+}
