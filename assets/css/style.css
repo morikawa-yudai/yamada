@@ -1438,3 +1438,171 @@ p, li, dt, dd, strong { line-break: strict; }
     gap:2px;
   }
 }
+
+
+/* Preview solution partner banners */
+.detail-card > span { display:none; }
+.detail-card::before {
+  content:"";
+  display:block;
+  width:38px;
+  height:2px;
+  border-radius:2px;
+  background:linear-gradient(90deg,var(--blue),rgba(21,152,210,.2));
+  transition:width .25s ease;
+}
+.detail-card:hover::before { width:62px; }
+.detail-card h3 { margin-top:26px; }
+
+.solution-brand-banner {
+  position:relative;
+  min-height:190px;
+  padding:38px 46px;
+  display:grid;
+  grid-template-columns:minmax(210px,.75fr) minmax(320px,1.35fr) auto;
+  gap:42px;
+  align-items:center;
+  overflow:hidden;
+  border-radius:24px;
+  text-decoration:none;
+  box-shadow:0 24px 70px rgba(11,39,66,.1);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.solution-brand-banner:hover {
+  transform:translateY(-5px);
+  box-shadow:0 34px 85px rgba(11,39,66,.17);
+}
+.solution-brand-banner + .service-detail { padding-top:95px; }
+.solution-banner-brand,
+.solution-banner-message,
+.solution-banner-link { position:relative; z-index:2; }
+.solution-banner-brand { display:flex; flex-direction:column; gap:12px; }
+.solution-banner-brand > small {
+  font-family:var(--latin);
+  font-size:.61rem;
+  font-weight:700;
+  letter-spacing:.2em;
+}
+.solution-banner-brand > strong {
+  font-family:var(--serif);
+  font-size:clamp(2.35rem,4vw,4rem);
+  font-weight:700;
+  line-height:1;
+  letter-spacing:.03em;
+}
+.solution-banner-brand > strong em {
+  margin-left:.08em;
+  color:var(--blue);
+  font-size:.75em;
+  font-style:normal;
+}
+.solution-banner-message { display:flex; flex-direction:column; gap:10px; }
+.solution-banner-message b {
+  font-family:var(--serif);
+  font-size:clamp(1.15rem,2vw,1.65rem);
+  font-weight:600;
+  line-height:1.6;
+}
+.solution-banner-message small { font-size:.78rem; line-height:1.8; }
+.solution-banner-link {
+  min-width:max-content;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding-bottom:8px;
+  border-bottom:1px solid currentColor;
+  font-family:var(--serif);
+  font-size:.78rem;
+  font-weight:600;
+}
+.solution-banner-link i {
+  width:30px;
+  height:30px;
+  display:grid;
+  place-items:center;
+  border:1px solid currentColor;
+  border-radius:50%;
+  font-family:var(--latin);
+  font-style:normal;
+  transition:transform .25s ease;
+}
+.solution-brand-banner:hover .solution-banner-link i { transform:translate(3px,-3px); }
+
+.banner-marutto {
+  color:var(--navy);
+  border:1px solid rgba(21,152,210,.2);
+  background:
+    radial-gradient(circle at 78% 18%,rgba(80,196,235,.2),transparent 27%),
+    linear-gradient(115deg,#fff 0%,#f6fcff 58%,#e9f8fe 100%);
+}
+.banner-marutto .solution-banner-brand > small,
+.banner-marutto .solution-banner-message small { color:var(--muted); }
+.solution-banner-orbit {
+  position:absolute;
+  right:-80px;
+  top:-145px;
+  width:390px;
+  height:390px;
+  border:1px solid rgba(21,152,210,.17);
+  border-radius:50%;
+}
+.solution-banner-orbit::before,
+.solution-banner-orbit::after {
+  content:"";
+  position:absolute;
+  border:1px solid rgba(21,152,210,.13);
+  border-radius:50%;
+}
+.solution-banner-orbit::before { inset:38px; }
+.solution-banner-orbit::after { inset:82px; background:rgba(255,255,255,.26); }
+
+.banner-bcompany {
+  color:#fff;
+  background:
+    radial-gradient(circle at 78% 20%,rgba(47,179,229,.25),transparent 26%),
+    linear-gradient(120deg,#071e32 0%,#0b2742 58%,#0a3d61 100%);
+}
+.banner-bcompany .solution-banner-brand > small { color:#72d0f2; }
+.banner-bcompany .solution-banner-message small { color:rgba(255,255,255,.62); }
+.solution-banner-bmark {
+  position:absolute;
+  right:3%;
+  top:50%;
+  z-index:0;
+  transform:translateY(-52%);
+  color:rgba(255,255,255,.045);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:15rem;
+  font-weight:700;
+  line-height:1;
+}
+.banner-bcompany .solution-banner-link { color:#fff; }
+
+@media (max-width:980px) {
+  .solution-brand-banner {
+    grid-template-columns:1fr auto;
+    gap:24px 38px;
+  }
+  .solution-banner-message { grid-column:1 / -1; grid-row:2; }
+  .solution-banner-link { grid-column:2; grid-row:1; }
+}
+@media (max-width:760px) {
+  .detail-card h3 { margin-top:22px; }
+  .solution-brand-banner {
+    min-height:0;
+    padding:30px 26px;
+    grid-template-columns:1fr;
+    gap:24px;
+    border-radius:18px;
+  }
+  .solution-banner-brand,
+  .solution-banner-message,
+  .solution-banner-link {
+    grid-column:1;
+    grid-row:auto;
+  }
+  .solution-banner-brand > strong { font-size:2.55rem; }
+  .solution-banner-link { width:max-content; }
+  .solution-brand-banner + .service-detail { padding-top:72px; }
+  .solution-banner-bmark { right:-10%; font-size:11rem; }
+}
