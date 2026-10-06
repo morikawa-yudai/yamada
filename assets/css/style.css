@@ -1347,14 +1347,46 @@ p, li, dt, dd, strong { line-break: strict; }
 
 /* Preview brand wording */
 .brand-copy b {
+  display:flex;
+  align-items:baseline;
+  gap:.5em;
+  font-family:inherit;
+  font-weight:600;
+  letter-spacing:0;
+}
+.brand-yamada {
+  font-family:Georgia, "Times New Roman", var(--serif);
+  font-size:1.22em;
+  font-weight:600;
+  line-height:.9;
+  letter-spacing:.055em;
+}
+.brand-group {
   font-family:var(--latin);
+  font-size:.62em;
   font-weight:700;
-  letter-spacing:.1em;
+  letter-spacing:.18em;
 }
 .brand-copy small {
+  display:flex;
+  align-items:baseline;
+  gap:.42em;
   font-family:var(--serif);
   font-weight:500;
-  letter-spacing:.12em;
+  letter-spacing:.08em;
+  white-space:nowrap;
+}
+.brand-for {
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:1.16em;
+  font-style:italic;
+  letter-spacing:0;
+}
+.brand-separator { opacity:.45; }
+.brand-since {
+  font-family:var(--latin);
+  font-weight:600;
+  letter-spacing:.11em;
 }
 .hero-yamada {
   font-family:var(--serif);
