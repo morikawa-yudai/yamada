@@ -1740,3 +1740,248 @@ p, li, dt, dd, strong { line-break: strict; }
   .works-gateway-copy h2 { font-size:clamp(1.8rem,8vw,2.35rem); }
   .works-gateway-image figcaption { left:22px; bottom:20px; }
 }
+
+
+/* Group snapshot: homepage company overview without repeating the full profile */
+.group-snapshot {
+  background:linear-gradient(135deg,#edf7fa 0%,#fff 52%,#f3f7f9 100%);
+}
+.group-snapshot-head {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(280px,.72fr);
+  gap:clamp(40px,8vw,110px);
+  align-items:end;
+}
+.group-snapshot-head h2 {
+  color:var(--navy);
+  font-size:clamp(2.2rem,4.4vw,3.7rem);
+  line-height:1.48;
+}
+.group-snapshot-head > p {
+  color:var(--muted);
+  line-height:2;
+}
+.group-snapshot-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  margin-top:64px;
+  border-top:1px solid rgba(11,39,66,.22);
+  border-bottom:1px solid rgba(11,39,66,.22);
+}
+.group-snapshot-item {
+  min-height:240px;
+  padding:38px clamp(24px,3vw,44px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.group-snapshot-item + .group-snapshot-item { border-left:1px solid rgba(11,39,66,.16); }
+.group-snapshot-item small,
+.group-bases > div > small {
+  color:var(--blue);
+  font-family:var(--latin);
+  font-size:.66rem;
+  font-weight:700;
+  letter-spacing:.18em;
+}
+.group-snapshot-item strong {
+  margin-top:8px;
+  color:var(--navy);
+  font-family:var(--latin);
+  font-size:clamp(3.4rem,6vw,5.4rem);
+  line-height:1;
+  letter-spacing:-.04em;
+}
+.group-snapshot-item strong em {
+  margin-left:7px;
+  font-family:var(--serif);
+  font-size:.22em;
+  font-style:normal;
+  letter-spacing:.02em;
+}
+.group-snapshot-item > span {
+  margin-top:17px;
+  color:var(--navy);
+  font-weight:700;
+}
+.group-snapshot-item > i {
+  margin-top:5px;
+  color:var(--muted);
+  font-size:.7rem;
+  font-style:normal;
+}
+.group-bases {
+  margin-top:34px;
+  display:flex;
+  justify-content:space-between;
+  gap:36px;
+  align-items:center;
+}
+.group-bases .text-link { margin-top:0; }
+.group-base-list {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:12px;
+}
+.group-base-list span {
+  padding:9px 17px;
+  border:1px solid rgba(11,39,66,.15);
+  border-radius:999px;
+  color:var(--navy);
+  background:rgba(255,255,255,.72);
+  font-size:.8rem;
+  font-weight:600;
+}
+
+/* Recruitment: moving workplace stories, details live on the recruit subpage */
+.recruit-stories {
+  padding:clamp(90px,10vw,145px) 0;
+  background:var(--navy);
+}
+.recruit-stories::before,
+.recruit-stories .recruit-photo { display:none; }
+.recruit-stories-head {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(280px,.72fr);
+  gap:clamp(40px,8vw,110px);
+  align-items:end;
+}
+.recruit-stories-head h2 {
+  color:#fff;
+  font-size:clamp(2.25rem,4.6vw,4rem);
+  line-height:1.45;
+}
+.recruit-stories-head > p {
+  color:rgba(255,255,255,.72);
+  line-height:2;
+}
+.recruit-marquee {
+  position:relative;
+  z-index:2;
+  margin-top:54px;
+  overflow:hidden;
+}
+.recruit-marquee::before,
+.recruit-marquee::after {
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  z-index:3;
+  width:min(8vw,110px);
+  pointer-events:none;
+}
+.recruit-marquee::before { left:0; background:linear-gradient(90deg,var(--navy),transparent); }
+.recruit-marquee::after { right:0; background:linear-gradient(-90deg,var(--navy),transparent); }
+.recruit-marquee-track {
+  display:flex;
+  width:max-content;
+  gap:22px;
+  animation:recruitMarquee 30s linear infinite;
+}
+.recruit-marquee:hover .recruit-marquee-track { animation-play-state:paused; }
+.recruit-marquee figure {
+  position:relative;
+  width:clamp(320px,42vw,650px);
+  aspect-ratio:3/2;
+  overflow:hidden;
+  border-radius:22px;
+  background:#102f4c;
+}
+.recruit-marquee img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .7s ease;
+}
+.recruit-marquee figure:hover img { transform:scale(1.035); }
+.recruit-marquee figcaption {
+  position:absolute;
+  right:18px;
+  bottom:18px;
+  left:18px;
+  padding:16px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  border:1px solid rgba(255,255,255,.24);
+  border-radius:14px;
+  color:#fff;
+  background:rgba(5,25,45,.76);
+  backdrop-filter:blur(9px);
+}
+.recruit-marquee figcaption small {
+  color:var(--sky);
+  font-family:var(--latin);
+  font-size:.62rem;
+  font-weight:700;
+  letter-spacing:.15em;
+}
+.recruit-marquee figcaption span {
+  font-family:var(--serif);
+  font-size:1rem;
+  font-weight:700;
+}
+.recruit-stories-foot {
+  position:relative;
+  z-index:2;
+  margin-top:40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:36px;
+}
+.recruit-stories-foot p {
+  max-width:650px;
+  color:rgba(255,255,255,.68);
+}
+.recruit-stories-foot .light-button { margin-top:0; flex:none; }
+@keyframes recruitMarquee {
+  from { transform:translateX(0); }
+  to { transform:translateX(calc(-50% - 11px)); }
+}
+
+/* Qualifications now sit inside the company profile instead of a separate section */
+.profile-credentials {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.profile-credentials > span {
+  padding:11px 15px;
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  border:1px solid rgba(11,39,66,.14);
+  border-radius:12px;
+  color:var(--navy);
+  background:#fff;
+  font-weight:700;
+}
+.profile-credentials small {
+  color:var(--muted);
+  font-weight:400;
+}
+
+@media (max-width:760px) {
+  .group-snapshot-head,
+  .recruit-stories-head { grid-template-columns:1fr; gap:26px; }
+  .group-snapshot-grid { grid-template-columns:1fr; margin-top:44px; }
+  .group-snapshot-item { min-height:180px; padding:28px 20px; }
+  .group-snapshot-item + .group-snapshot-item {
+    border-top:1px solid rgba(11,39,66,.16);
+    border-left:0;
+  }
+  .group-bases,
+  .recruit-stories-foot { align-items:flex-start; flex-direction:column; }
+  .recruit-marquee { margin-top:40px; }
+  .recruit-marquee-track { gap:14px; animation-duration:24s; }
+  .recruit-marquee figure { width:82vw; border-radius:16px; }
+  .recruit-marquee figcaption { right:12px; bottom:12px; left:12px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .recruit-marquee { overflow-x:auto; }
+  .recruit-marquee-track { animation:none; }
+}
