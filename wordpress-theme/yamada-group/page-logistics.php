@@ -1,0 +1,70 @@
+<?php
+/** Generated from the approved Vercel design. */
+get_header();
+?>
+<main>
+    <section class="subhero">
+      <img class="subhero-media" src="<?php echo esc_url(yg_asset('images/hero-night.webp')); ?>" alt="夜の高速道路を走る山田運輸のトラック" width="1672" height="941">
+      <div class="subhero-shade"></div>
+      <div class="shell subhero-content">
+        <p class="subhero-code">SERVICE 01 / LOGISTICS</p>
+        <h1>物流を止めない。<br>企業の流れを支える。</h1>
+        <p>1977年の創業から積み重ねた現場力で、首都圏の輸送・保管・業務請負を柔軟に支えます。</p>
+      </div>
+    </section>
+    <nav class="breadcrumb shell" aria-label="パンくず"><a href="<?php echo esc_url(home_url('/')); ?>">TOP</a><span>／</span><span>物流事業</span></nav>
+
+    <section class="section service-overview">
+      <div class="shell service-overview-grid">
+        <div class="service-overview-copy reveal">
+          <p class="section-code">OUR LOGISTICS</p>
+          <h2 class="logistics-overview-title"><span class="overview-line"><span>運ぶだけで</span><span>終わらない、</span></span><span class="overview-line"><span>現場起点の</span><span>物流支援。</span></span></h2>
+        </div>
+        <div class="service-overview-text reveal">
+          <p>都内を中心とした積合せ配送から、定期便・スポット便・中量ロットまで。荷物の特性や納期、現場条件に合わせて最適な体制を組みます。</p>
+          <p>輸送から施工・保管・回収・業務請負まで窓口を一本化し、お客様の手間と物流コストを減らします。</p>
+        </div>
+      </div>
+      <div class="shell sub-stat-grid">
+        <div class="sub-stat reveal"><small>FOUNDED</small><strong>1977</strong><span>年創業</span></div>
+        <div class="sub-stat reveal"><small>VEHICLES</small><strong>50+</strong><span>保有車両</span></div>
+        <div class="sub-stat reveal"><small>SUPPORT</small><strong>365</strong><span>日対応体制</span></div>
+      </div>
+    </section>
+
+    <section class="section service-detail">
+      <div class="shell">
+        <header class="section-heading reveal"><p class="section-code">SERVICE MENU</p><h2>対応サービス</h2><p>単体のご依頼から複数業務の一括対応まで、必要な範囲に合わせて組み立てます。</p></header>
+        <div class="detail-card-grid">
+          <article class="detail-card reveal"><span>01</span><h3>都内23区・首都圏積合せ便</h3><p>都内23区を中心としたネットワークで、中量ロットや複数納品先にも柔軟に対応します。</p></article>
+          <article class="detail-card reveal"><span>02</span><h3>貨物・商品保管</h3><p>安全で適切な保管環境を整え、大切な貨物や商品をお預かりします。</p></article>
+          <article class="detail-card reveal"><span>03</span><h3>特殊重量物・什器輸送</h3><p>医療機器、金庫、複合機、大型家電など、取り扱いに配慮が必要な貨物もご相談いただけます。</p></article>
+          <article class="detail-card reveal"><span>04</span><h3>産業廃棄物収集運搬</h3><p>関係法令を遵守し、東京・千葉・埼玉・神奈川の対象エリアで適正に収集運搬します。</p></article>
+          <article class="detail-card reveal"><span>05</span><h3>繁忙期対策・業務請負</h3><p>繁忙期の増車、積み降ろし、仕分け、配送補助、倉庫内作業まで必要な範囲を請け負います。</p></article>
+          <article class="detail-card reveal"><span>06</span><h3>梱包・配送・設置</h3><p>法人向けはもちろん、個人宅への家財配送や梱包、指定場所への搬入・設置まで対応します。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reason-section">
+      <div class="shell">
+        <header class="section-heading reveal"><p class="section-code">WHY YAMADA</p><h2>山田運輸が選ばれる理由</h2></header>
+        <div class="reason-grid">
+          <article class="reason-card reveal"><b>01</b><h3>首都圏・中量品配送への対応力</h3><p>都内中心の積合せ配送ネットワークを活かし、複雑なオーダーにも柔軟に対応。</p></article>
+          <article class="reason-card reveal"><b>02</b><h3>輸送から保管まで一括管理</h3><p>一般運送・関連作業・倉庫業務の窓口を一本化し、ワンストップで進行。</p></article>
+          <article class="reason-card reveal"><b>03</b><h3>課題に合わせた柔軟な提案力</h3><p>効率化・品質向上・コスト最適化まで、現場を知る担当者が具体策をご提案。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process-section">
+      <div class="shell">
+        <header class="section-heading reveal"><p class="section-code">FLOW</p><h2>ご依頼の流れ</h2></header>
+        <ol class="process-list reveal">
+          <li><small>01</small><strong>お問い合わせ</strong></li><li><small>02</small><strong>ヒアリング</strong></li><li><small>03</small><strong>お見積り・ご提案</strong></li><li><small>04</small><strong>作業実施</strong></li><li><small>05</small><strong>完了・フォロー</strong></li>
+        </ol>
+      </div>
+    </section>
+    <section class="sub-cta"><div class="shell sub-cta-inner reveal"><div><p class="section-code">CONTACT</p><h2>物流の困りごとを、まずはご相談ください。</h2><p>配送・保管・請負まで、内容が固まっていない段階でも構いません。</p></div><a href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ <span>→</span></a></div></section>
+  </main>
+<?php get_footer(); ?>
